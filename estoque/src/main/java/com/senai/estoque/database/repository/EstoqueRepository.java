@@ -7,4 +7,5 @@ import java.util.List;
 public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
     List<Estoque> findAllByProdutoId(Long produtoId);
     List<Estoque> findAllByPosicaoId(Long posicaoId);
+    boolean existsByProdutoId(Long produtoId);
 }

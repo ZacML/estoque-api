@@ -2,6 +2,18 @@
   font-size: 1.6rem;
 }
 
+.erro {
+  color: var(--red);
+  font-size: 0.75rem;
+}
+
+.alerta {
+  border-color: var(--red);
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 0.875rem;
+}
+
 .kpi-top {
   display: flex;
   align-items: center;

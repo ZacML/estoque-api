@@ -30,6 +30,7 @@ export class RuasComponent {
   filtro = signal<Filtro>('todas');
   selecionada = signal<Posicao | null>(null);
   lastUpdated = signal(new Date());
+  erro = signal('');
 
   produtoMap = computed(() => new Map(this.produtos().map((p) => [p.id, p])));
 
@@ -80,12 +81,16 @@ export class RuasComponent {
       posicoes: this.api.listarPosicoes(),
       estoques: this.api.listarEstoques(),
       produtos: this.api.listarProdutos(),
-    }).subscribe((data) => {
-      this.ruas.set(data.ruas);
-      this.posicoes.set(data.posicoes);
-      this.estoques.set(data.estoques);
-      this.produtos.set(data.produtos);
-      this.lastUpdated.set(new Date());
+    }).subscribe({
+      next: (data) => {
+        this.ruas.set(data.ruas);
+        this.posicoes.set(data.posicoes);
+        this.estoques.set(data.estoques);
+        this.produtos.set(data.produtos);
+        this.lastUpdated.set(new Date());
+        this.erro.set('');
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível carregar os dados.'),
     });
   }
 

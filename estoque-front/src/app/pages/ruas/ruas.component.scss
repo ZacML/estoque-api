@@ -1,3 +1,10 @@
+.alerta {
+  border-color: var(--red);
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 0.875rem;
+}
+
 .legend {
   display: flex;
   align-items: center;

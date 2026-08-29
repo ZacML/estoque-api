@@ -1,4 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d1a30185-76d5-46b1-9f99-2588eab9818f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/estoque-front/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/estoque-front/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque-front/src/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/estoque-front/src/app/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque-front/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/estoque-front/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque-front/src/app/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/estoque-front/src/app/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque-front/src/app/app.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/estoque-front/src/app/app.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque-front/src/app/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/estoque-front/src/app/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque-front/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/estoque-front/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque/Img/01_dashboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque/Img/02_controle_ruas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque/Img/03_controle_docas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/estoque/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="3IZxjOPgkRlaeflJRKUBo8ADKD7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33813.25" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1a30185-76d5-46b1-9f99-2588eab9818f" name="Changes" comment="" />
+      <created>1787986027864</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1787986027864</updated>
+    </task>
+    <servers />
+  </component>
 </project>

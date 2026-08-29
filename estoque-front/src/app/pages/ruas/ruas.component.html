@@ -23,6 +23,10 @@
     <p class="page-subtitle">{{ ruas().length }} ruas cadastradas. Toque numa posição para ver o produto guardado.</p>
   </div>
 
+  @if (erro()) {
+    <div class="card alerta">{{ erro() }}</div>
+  }
+
   <div class="legend">
     <span class="legend-item"><span class="swatch livre"></span> Livre</span>
     <span class="legend-item"><span class="swatch ocupada"></span> Ocupada</span>

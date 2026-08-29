@@ -10,7 +10,7 @@
     />
   </div>
   <app-notificacoes />
-  <button class="btn btn-primary" type="button" (click)="showForm.set(true)">
+  <button class="btn btn-primary" type="button" (click)="erro.set(''); showForm.set(true)">
     <app-icon name="plus" /> Nova movimentação
   </button>
 </header>
@@ -22,6 +22,10 @@
       Você tem <strong>{{ pendentes().length }}</strong> saída(s) esperando sua liberação.
     </p>
   </div>
+
+  @if (erro() && !showForm()) {
+    <div class="card alerta">{{ erro() }}</div>
+  }
 
   <div class="grid-auto">
     <div class="card kpi">
@@ -137,6 +141,9 @@
 
 @if (showForm()) {
   <app-modal title="Nova movimentação" (close)="showForm.set(false)">
+    @if (erro()) {
+      <p class="erro">{{ erro() }}</p>
+    }
     <app-movimentacao-form
       [produtos]="produtos()"
       [posicoes]="posicoes()"

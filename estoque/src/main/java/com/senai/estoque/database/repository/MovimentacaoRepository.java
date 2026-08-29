@@ -10,4 +10,6 @@ public interface MovimentacaoRepository extends JpaRepository<Movimentacao, Long
     List<Movimentacao> findAllBySaidaTrueAndAutorizadaFalse();
 
     List<Movimentacao> findAllByDocaId(Long docaId);
+
+    boolean existsByProdutoId(Long produtoId);
 }

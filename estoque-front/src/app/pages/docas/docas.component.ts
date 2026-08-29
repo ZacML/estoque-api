@@ -26,6 +26,7 @@ export class DocasComponent {
   searchTerm = signal('');
   chegadaParaDoca = signal<Doca | null | undefined>(undefined);
   notaSelecionada = signal<Movimentacao | null>(null);
+  erro = signal('');
 
   produtoMap = computed(() => new Map(this.produtos().map((p) => [p.id, p])));
 
@@ -61,10 +62,14 @@ export class DocasComponent {
       docas: this.api.listarDocas(),
       movimentacoes: this.api.listarMovimentacoes(),
       produtos: this.api.listarProdutos(),
-    }).subscribe((data) => {
-      this.docas.set(data.docas);
-      this.movimentacoes.set(data.movimentacoes);
-      this.produtos.set(data.produtos);
+    }).subscribe({
+      next: (data) => {
+        this.docas.set(data.docas);
+        this.movimentacoes.set(data.movimentacoes);
+        this.produtos.set(data.produtos);
+        this.erro.set('');
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível carregar os dados.'),
     });
   }
 
@@ -88,15 +93,18 @@ export class DocasComponent {
   }
 
   onRegistrarChegada(payload: Partial<Movimentacao>) {
-    this.api.salvarMovimentacao(payload).subscribe(() => {
-      const docaId = payload.docaId;
-      const doca = docaId ? this.docas().find((d) => d.id === docaId) : null;
-      if (doca) {
-        this.api.atualizarDoca(doca.id, { ...doca, ocupada: true }).subscribe(() => this.refresh());
-      } else {
-        this.refresh();
-      }
-      this.chegadaParaDoca.set(undefined);
+    this.api.salvarMovimentacao(payload).subscribe({
+      next: () => {
+        const docaId = payload.docaId;
+        const doca = docaId ? this.docas().find((d) => d.id === docaId) : null;
+        if (doca) {
+          this.api.atualizarDoca(doca.id, { ...doca, ocupada: true }).subscribe(() => this.refresh());
+        } else {
+          this.refresh();
+        }
+        this.chegadaParaDoca.set(undefined);
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível registrar a chegada.'),
     });
   }
 }

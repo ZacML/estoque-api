@@ -31,6 +31,7 @@ export class DashboardComponent {
 
   showForm = signal(false);
   searchTerm = signal('');
+  erro = signal('');
 
   produtoMap = computed(() => new Map(this.produtos().map((p) => [p.id, p])));
   ruaMap = computed(() => new Map(this.ruas().map((r) => [r.id, r])));
@@ -98,13 +99,17 @@ export class DashboardComponent {
       produtos: this.api.listarProdutos(),
       movimentacoes: this.api.listarMovimentacoes(),
       pendentes: this.api.listarSaidasPendentes(),
-    }).subscribe((data) => {
-      this.ruas.set(data.ruas);
-      this.posicoes.set(data.posicoes);
-      this.docas.set(data.docas);
-      this.produtos.set(data.produtos);
-      this.movimentacoes.set(data.movimentacoes);
-      this.pendentes.set(data.pendentes);
+    }).subscribe({
+      next: (data) => {
+        this.ruas.set(data.ruas);
+        this.posicoes.set(data.posicoes);
+        this.docas.set(data.docas);
+        this.produtos.set(data.produtos);
+        this.movimentacoes.set(data.movimentacoes);
+        this.pendentes.set(data.pendentes);
+        this.erro.set('');
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível carregar os dados.'),
     });
   }
 
@@ -132,14 +137,17 @@ export class DashboardComponent {
   }
 
   onNovaMovimentacao(payload: Partial<Movimentacao>) {
-    this.api.salvarMovimentacao(payload).subscribe(() => {
-      const doca = payload.docaId ? this.docas().find((d) => d.id === payload.docaId) : null;
-      if (doca && !doca.ocupada) {
-        this.api.atualizarDoca(doca.id, { ...doca, ocupada: true }).subscribe(() => this.refresh());
-      } else {
-        this.refresh();
-      }
-      this.showForm.set(false);
+    this.api.salvarMovimentacao(payload).subscribe({
+      next: () => {
+        const doca = payload.docaId ? this.docas().find((d) => d.id === payload.docaId) : null;
+        if (doca && !doca.ocupada) {
+          this.api.atualizarDoca(doca.id, { ...doca, ocupada: true }).subscribe(() => this.refresh());
+        } else {
+          this.refresh();
+        }
+        this.showForm.set(false);
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível registrar a movimentação.'),
     });
   }
 

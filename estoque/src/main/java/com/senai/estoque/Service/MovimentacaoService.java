@@ -172,6 +172,9 @@ public class MovimentacaoService {
         Doca doca = dto.docaId() == null ? null :
                 docaRepository.findById(dto.docaId())
                         .orElseThrow(() -> new EntityNotFoundException("Doca não encontrada"));
+        if (doca != null && mov.getId() == null && Boolean.TRUE.equals(doca.getOcupada())) {
+            throw new IllegalStateException("Doca já ocupada por outro caminhão");
+        }
 
         mov.setSaida(dto.saida());
         mov.setDataHora(dto.dataHora() != null ? dto.dataHora() : LocalDateTime.now());

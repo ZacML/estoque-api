@@ -3,6 +3,18 @@
   font-size: 0.875rem;
 }
 
+.erro {
+  color: var(--red);
+  font-size: 0.75rem;
+}
+
+.alerta {
+  border-color: var(--red);
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 0.875rem;
+}
+
 .doca-card {
   display: flex;
   flex-direction: column;

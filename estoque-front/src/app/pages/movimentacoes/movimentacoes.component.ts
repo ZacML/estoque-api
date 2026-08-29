@@ -59,12 +59,16 @@ export class MovimentacoesComponent {
       posicoes: this.api.listarPosicoes(),
       ruas: this.api.listarRuas(),
       docas: this.api.listarDocas(),
-    }).subscribe((data) => {
-      this.movimentacoes.set(data.movimentacoes);
-      this.produtos.set(data.produtos);
-      this.posicoes.set(data.posicoes);
-      this.ruas.set(data.ruas);
-      this.docas.set(data.docas);
+    }).subscribe({
+      next: (data) => {
+        this.movimentacoes.set(data.movimentacoes);
+        this.produtos.set(data.produtos);
+        this.posicoes.set(data.posicoes);
+        this.ruas.set(data.ruas);
+        this.docas.set(data.docas);
+        this.erro.set('');
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível carregar os dados.'),
     });
   }
 

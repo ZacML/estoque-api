@@ -11,7 +11,7 @@
   </div>
   <span class="pill pill-green">{{ docasLivres() }} livres</span>
   <span class="pill pill-amber">{{ docasEmUso() }} em uso</span>
-  <button class="btn btn-primary" type="button" (click)="chegadaParaDoca.set(null)">
+  <button class="btn btn-primary" type="button" (click)="erro.set(''); chegadaParaDoca.set(null)">
     <app-icon name="plus" /> Registrar chegada
   </button>
 </header>
@@ -21,6 +21,10 @@
     <h1 class="page-title">Controle de docas</h1>
     <p class="page-subtitle">{{ docas().length }} docas de caminhão. A saída só é liberada depois que você autoriza a nota.</p>
   </div>
+
+  @if (erro() && chegadaParaDoca() === undefined) {
+    <div class="card alerta">{{ erro() }}</div>
+  }
 
   @if (cards().length === 0) {
     <p class="empty">Nenhuma doca cadastrada.</p>
@@ -65,7 +69,7 @@
               <app-icon name="truck" />
               <span>Nenhum caminhão na doca</span>
             </div>
-            <button class="btn doca-actions-full" type="button" (click)="chegadaParaDoca.set(item.doca)">Registrar chegada</button>
+            <button class="btn doca-actions-full" type="button" (click)="erro.set(''); chegadaParaDoca.set(item.doca)">Registrar chegada</button>
           }
         </div>
       }
@@ -75,6 +79,9 @@
 
 @if (chegadaParaDoca() !== undefined) {
   <app-modal title="Registrar chegada" (close)="chegadaParaDoca.set(undefined)">
+    @if (erro()) {
+      <p class="erro">{{ erro() }}</p>
+    }
     <app-movimentacao-form
       [produtos]="produtos()"
       [docas]="docas()"
