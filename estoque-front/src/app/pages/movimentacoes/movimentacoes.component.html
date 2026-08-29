@@ -9,7 +9,7 @@
       aria-label="Buscar por produto, placa ou nota"
     />
   </div>
-  <button class="btn btn-primary" type="button" (click)="showForm.set(true)">
+  <button class="btn btn-primary" type="button" (click)="nova()">
     <app-icon name="plus" /> Nova movimentação
   </button>
 </header>
@@ -19,6 +19,10 @@
     <h1 class="page-title">Movimentações</h1>
     <p class="page-subtitle">{{ movimentacoes().length }} movimentações registradas.</p>
   </div>
+
+  @if (erro()) {
+    <div class="card alerta">{{ erro() }}</div>
+  }
 
   <div class="card">
     @if (lista().length === 0) {
@@ -33,8 +37,9 @@
               <th>Produto</th>
               <th>Quantidade</th>
               <th>Placa / Nota</th>
+              <th>Endereço</th>
               <th>Status</th>
-              <th></th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -47,13 +52,27 @@
                   </span>
                 </td>
                 <td>{{ produtoMap().get(m.produtoId)?.nome ?? '—' }}</td>
-                <td>{{ m.quantidade }} {{ produtoMap().get(m.produtoId)?.unidade }}</td>
-                <td>{{ m.placa ?? '—' }} / {{ m.nota ?? '—' }}</td>
-                <td>{{ status(m) }}</td>
                 <td>
+                  {{ m.quantidade }} {{ produtoMap().get(m.produtoId)?.unidade }}
+                  @if (divergencia(m); as diff) {
+                    <span class="pill" [class.pill-red]="diff < 0" [class.pill-amber]="diff > 0">
+                      {{ diff > 0 ? '+' : '' }}{{ diff }} conferido
+                    </span>
+                  }
+                </td>
+                <td>{{ m.placa ?? '—' }} / {{ m.nota ?? '—' }}</td>
+                <td>{{ endereco(m) }}</td>
+                <td>{{ status(m) }}</td>
+                <td class="acoes">
                   @if (m.saida && !m.autorizada) {
                     <button class="btn btn-primary" type="button" (click)="liberar(m)">Liberar</button>
                   }
+                  <button class="btn btn-icon" type="button" (click)="editar(m)" aria-label="Editar movimentação">
+                    <app-icon name="edit" />
+                  </button>
+                  <button class="btn btn-icon" type="button" (click)="confirmarExclusao(m)" aria-label="Excluir movimentação">
+                    <app-icon name="trash" />
+                  </button>
                 </td>
               </tr>
             }
@@ -64,14 +83,29 @@
   </div>
 </section>
 
-@if (showForm()) {
-  <app-modal title="Nova movimentação" (close)="showForm.set(false)">
+@if (editando() !== undefined) {
+  <app-modal [title]="editando() ? 'Editar movimentação' : 'Nova movimentação'" (close)="editando.set(undefined)">
     <app-movimentacao-form
       [produtos]="produtos()"
       [posicoes]="posicoes()"
       [docas]="docas()"
       [ruas]="ruas()"
-      (submitted)="onNova($event)"
+      [inicial]="editando() ?? null"
+      (submitted)="onSubmit($event)"
     />
+  </app-modal>
+}
+
+@if (excluindo(); as m) {
+  <app-modal title="Excluir movimentação" (close)="excluindo.set(null)">
+    <p class="confirmacao">
+      Excluir a {{ m.saida ? 'saída' : 'entrada' }} de
+      <strong>{{ m.quantidade }} {{ produtoMap().get(m.produtoId)?.unidade }} {{ produtoMap().get(m.produtoId)?.nome }}</strong>
+      registrada em {{ dataHoraFmt(m.dataHora) }}? Essa ação não pode ser desfeita.
+    </p>
+    <div class="confirmacao-acoes">
+      <button class="btn" type="button" (click)="excluindo.set(null)">Cancelar</button>
+      <button class="btn btn-danger" type="button" (click)="excluir()">Excluir</button>
+    </div>
   </app-modal>
 }

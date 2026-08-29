@@ -1,22 +1,26 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { ApiService } from '../../core/api.service';
 import { Doca, Movimentacao, Posicao, Produto, Rua } from '../../core/models';
 import { occupancyTier } from '../../core/occupancy';
+import { RealtimeService } from '../../core/realtime.service';
 import { IconComponent } from '../../shared/icon.component';
 import { ModalComponent } from '../../shared/modal.component';
 import { MovimentacaoFormComponent } from '../../shared/movimentacao-form.component';
+import { NotificacoesComponent } from '../../shared/notificacoes.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterLink, IconComponent, ModalComponent, MovimentacaoFormComponent],
+  imports: [RouterLink, IconComponent, ModalComponent, MovimentacaoFormComponent, NotificacoesComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
   private api = inject(ApiService);
+  private realtime = inject(RealtimeService);
 
   ruas = signal<Rua[]>([]);
   posicoes = signal<Posicao[]>([]);
@@ -72,6 +76,10 @@ export class DashboardComponent {
 
   constructor() {
     this.refresh();
+    // Qualquer ação feita no app coletor cai aqui e redesenha os indicadores.
+    this.realtime.eventos$.pipe(takeUntilDestroyed()).subscribe(({ nome }) => {
+      if (nome !== 'conectado') this.refresh();
+    });
   }
 
   private matchesSearch(m: Movimentacao, term: string): boolean {

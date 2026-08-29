@@ -25,7 +25,7 @@ import { IconComponent } from './icon.component';
       .overlay {
         position: fixed;
         inset: 0;
-        background: rgba(17, 24, 39, 0.45);
+        background: var(--overlay);
         display: flex;
         align-items: center;
         justify-content: center;

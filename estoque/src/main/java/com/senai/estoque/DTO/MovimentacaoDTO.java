@@ -8,6 +8,8 @@ public record MovimentacaoDTO(
         Boolean saida,
         LocalDateTime dataHora,
         BigDecimal quantidade,
+        BigDecimal quantidadeConferida,
+        Boolean conferida,
         String placa,
         String motorista,
         String transportadora,

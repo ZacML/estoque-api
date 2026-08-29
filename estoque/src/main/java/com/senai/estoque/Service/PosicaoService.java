@@ -14,10 +14,14 @@ public class PosicaoService {
 
     private final PosicaoRepository posicaoRepository;
     private final RuaRepository ruaRepository;
+    private final EventoService eventoService;
 
-    public PosicaoService(PosicaoRepository posicaoRepository, RuaRepository ruaRepository) {
+    public PosicaoService(PosicaoRepository posicaoRepository,
+                          RuaRepository ruaRepository,
+                          EventoService eventoService) {
         this.posicaoRepository = posicaoRepository;
         this.ruaRepository = ruaRepository;
+        this.eventoService = eventoService;
     }
 
     public List<PosicaoDTO> listar() {
@@ -38,7 +42,9 @@ public class PosicaoService {
                 .ocupada(dto.ocupada() != null ? dto.ocupada() : false)
                 .rua(rua)
                 .build();
-        return toResponseDTO(posicaoRepository.save(posicao));
+        PosicaoDTO salva = toResponseDTO(posicaoRepository.save(posicao));
+        eventoService.publicar("street:occupancy_updated", salva);
+        return salva;
     }
 
     public PosicaoDTO atualizar(Long id, PosicaoDTO dto) {
@@ -51,7 +57,9 @@ public class PosicaoService {
             posicao.setOcupada(dto.ocupada());
         }
         posicao.setRua(rua);
-        return toResponseDTO(posicaoRepository.save(posicao));
+        PosicaoDTO atualizada = toResponseDTO(posicaoRepository.save(posicao));
+        eventoService.publicar("street:occupancy_updated", atualizada);
+        return atualizada;
     }
 
     public void deletar(Long id) {
@@ -59,6 +67,7 @@ public class PosicaoService {
             throw new EntityNotFoundException("Posição não encontrada");
         }
         posicaoRepository.deleteById(id);
+        eventoService.publicar("posicao:removed", id);
     }
 
     public List<PosicaoDTO> getByRua(Long ruaId) {

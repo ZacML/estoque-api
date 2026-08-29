@@ -3,3 +3,29 @@
   font-size: 0.875rem;
   padding: 1rem 0;
 }
+
+.alerta {
+  border-color: var(--red);
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 0.875rem;
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.confirmacao {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.confirmacao-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+}

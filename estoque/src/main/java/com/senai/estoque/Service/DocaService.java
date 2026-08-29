@@ -12,9 +12,11 @@ import java.util.List;
 public class DocaService {
 
     private final DocaRepository docaRepository;
+    private final EventoService eventoService;
 
-    public DocaService(DocaRepository docaRepository) {
+    public DocaService(DocaRepository docaRepository, EventoService eventoService) {
         this.docaRepository = docaRepository;
+        this.eventoService = eventoService;
     }
 
     public List<DocaDTO> listar() {
@@ -33,7 +35,9 @@ public class DocaService {
                 .expedicao(dto.expedicao())
                 .ocupada(dto.ocupada() != null ? dto.ocupada() : false)
                 .build();
-        return toResponseDTO(docaRepository.save(doca));
+        DocaDTO salva = toResponseDTO(docaRepository.save(doca));
+        eventoService.publicar("doca:status_changed", salva);
+        return salva;
     }
 
     public DocaDTO atualizar(Long id, DocaDTO dto) {
@@ -44,7 +48,9 @@ public class DocaService {
         if (dto.ocupada() != null) {
             doca.setOcupada(dto.ocupada());
         }
-        return toResponseDTO(docaRepository.save(doca));
+        DocaDTO atualizada = toResponseDTO(docaRepository.save(doca));
+        eventoService.publicar("doca:status_changed", atualizada);
+        return atualizada;
     }
 
     public void deletar(Long id) {
@@ -52,6 +58,7 @@ public class DocaService {
             throw new EntityNotFoundException("Doca não encontrada");
         }
         docaRepository.deleteById(id);
+        eventoService.publicar("doca:removed", id);
     }
 
     public List<DocaDTO> getLivres() {

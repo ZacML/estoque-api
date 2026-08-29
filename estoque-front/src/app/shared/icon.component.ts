@@ -14,7 +14,11 @@ export type IconName =
   | 'arrow-down'
   | 'filter'
   | 'close'
-  | 'pin';
+  | 'pin'
+  | 'sun'
+  | 'moon'
+  | 'edit'
+  | 'trash';
 
 @Component({
   selector: 'app-icon',
@@ -95,6 +99,31 @@ export type IconName =
         @case ('pin') {
           <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z" />
           <circle cx="12" cy="10" r="2.5" />
+        }
+        @case ('sun') {
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="M4.9 4.9l1.4 1.4" />
+          <path d="M17.7 17.7l1.4 1.4" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="M4.9 19.1l1.4-1.4" />
+          <path d="M17.7 6.3l1.4-1.4" />
+        }
+        @case ('moon') {
+          <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z" />
+        }
+        @case ('edit') {
+          <path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17v3z" />
+          <path d="M14.5 6.5l3 3" />
+        }
+        @case ('trash') {
+          <path d="M4 7h16" />
+          <path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+          <path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12" />
+          <path d="M10 11v6" />
+          <path d="M14 11v6" />
         }
       }
     </svg>

@@ -56,13 +56,24 @@
     <form class="form" (ngSubmit)="salvar()">
       <div class="field">
         <label for="nome">Nome</label>
-        <input id="nome" name="nome" type="text" [(ngModel)]="nome" required />
+        <input id="nome" name="nome" type="text" maxlength="80" [(ngModel)]="nome" required />
       </div>
       <div class="field">
         <label for="unidade">Unidade</label>
-        <input id="unidade" name="unidade" type="text" placeholder="ex.: un, cx, kg" [(ngModel)]="unidade" required />
+        <input
+          id="unidade"
+          name="unidade"
+          type="text"
+          maxlength="10"
+          placeholder="ex.: un, cx, kg"
+          [(ngModel)]="unidade"
+          required
+        />
       </div>
-      <button type="submit" class="btn btn-primary">Salvar</button>
+      @if (erro()) {
+        <small class="erro">{{ erro() }}</small>
+      }
+      <button type="submit" class="btn btn-primary" [disabled]="!podeSalvar()">Salvar</button>
     </form>
   </app-modal>
 }

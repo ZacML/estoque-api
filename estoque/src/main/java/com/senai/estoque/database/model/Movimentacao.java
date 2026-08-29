@@ -27,9 +27,18 @@ public class Movimentacao {
     @Column(name = "data_hora", nullable = false)
     private LocalDateTime dataHora;
 
+    /** Quantidade declarada na nota fiscal. */
     @NotNull
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal quantidade;
+
+    /** Quantidade realmente contada pelo operador no coletor (null = ainda não conferida). */
+    @Column(name = "quantidade_conferida", precision = 10, scale = 2)
+    private BigDecimal quantidadeConferida;
+
+    @Builder.Default
+    @Column(nullable = false)
+    private Boolean conferida = false;
 
     @Column(length = 10)
     private String placa;

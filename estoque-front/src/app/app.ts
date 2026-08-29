@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ThemeService } from './core/theme.service';
 import { IconComponent } from './shared/icon.component';
 
 @Component({
@@ -10,6 +11,8 @@ import { IconComponent } from './shared/icon.component';
   styleUrl: './app.scss',
 })
 export class App {
+  protected readonly theme = inject(ThemeService);
+
   protected readonly navItems = [
     { path: 'dashboard', label: 'Dashboard', icon: 'grid' as const },
     { path: 'ruas', label: 'Ruas & Posições', icon: 'bars' as const },

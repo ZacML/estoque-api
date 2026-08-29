@@ -28,7 +28,11 @@ export interface Movimentacao {
   id: number;
   saida: boolean;
   dataHora: string;
+  /** Quantidade declarada na nota. */
   quantidade: number;
+  /** Quantidade contada no coletor (null enquanto não conferida). */
+  quantidadeConferida: number | null;
+  conferida: boolean;
   placa: string | null;
   motorista: string | null;
   transportadora: string | null;

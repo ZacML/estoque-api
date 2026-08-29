@@ -1,7 +1,9 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { forkJoin } from 'rxjs';
 import { ApiService } from '../../core/api.service';
 import { Doca, Movimentacao, Produto } from '../../core/models';
+import { RealtimeService } from '../../core/realtime.service';
 import { IconComponent } from '../../shared/icon.component';
 import { ModalComponent } from '../../shared/modal.component';
 import { MovimentacaoFormComponent } from '../../shared/movimentacao-form.component';
@@ -15,6 +17,7 @@ import { MovimentacaoFormComponent } from '../../shared/movimentacao-form.compon
 })
 export class DocasComponent {
   private api = inject(ApiService);
+  private realtime = inject(RealtimeService);
 
   docas = signal<Doca[]>([]);
   movimentacoes = signal<Movimentacao[]>([]);
@@ -47,6 +50,10 @@ export class DocasComponent {
 
   constructor() {
     this.refresh();
+    // A doca liberada no app precisa aparecer como "Livre" aqui na hora.
+    this.realtime.eventos$.pipe(takeUntilDestroyed()).subscribe(({ nome }) => {
+      if (nome !== 'conectado') this.refresh();
+    });
   }
 
   refresh() {

@@ -22,6 +22,17 @@
       }
     </nav>
 
+    <button
+      class="tema-toggle"
+      type="button"
+      (click)="theme.alternar()"
+      [attr.aria-label]="theme.tema() === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'"
+      [attr.aria-pressed]="theme.tema() === 'dark'"
+    >
+      <app-icon [name]="theme.tema() === 'dark' ? 'sun' : 'moon'" />
+      <span>{{ theme.tema() === 'dark' ? 'Modo claro' : 'Modo escuro' }}</span>
+    </button>
+
     <div class="user">
       <span class="avatar">OP</span>
       <div>

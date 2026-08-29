@@ -1,7 +1,9 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { forkJoin } from 'rxjs';
 import { ApiService } from '../../core/api.service';
 import { Doca, Movimentacao, Posicao, Produto, Rua } from '../../core/models';
+import { RealtimeService } from '../../core/realtime.service';
 import { IconComponent } from '../../shared/icon.component';
 import { ModalComponent } from '../../shared/modal.component';
 import { MovimentacaoFormComponent } from '../../shared/movimentacao-form.component';
@@ -15,6 +17,7 @@ import { MovimentacaoFormComponent } from '../../shared/movimentacao-form.compon
 })
 export class MovimentacoesComponent {
   private api = inject(ApiService);
+  private realtime = inject(RealtimeService);
 
   movimentacoes = signal<Movimentacao[]>([]);
   produtos = signal<Produto[]>([]);
@@ -23,7 +26,11 @@ export class MovimentacoesComponent {
   docas = signal<Doca[]>([]);
 
   searchTerm = signal('');
-  showForm = signal(false);
+
+  /** undefined = modal fechado · null = nova · Movimentacao = edição */
+  editando = signal<Movimentacao | null | undefined>(undefined);
+  excluindo = signal<Movimentacao | null>(null);
+  erro = signal('');
 
   produtoMap = computed(() => new Map(this.produtos().map((p) => [p.id, p])));
 
@@ -40,6 +47,9 @@ export class MovimentacoesComponent {
 
   constructor() {
     this.refresh();
+    this.realtime.eventos$.pipe(takeUntilDestroyed()).subscribe(({ nome }) => {
+      if (nome !== 'conectado') this.refresh();
+    });
   }
 
   refresh() {
@@ -63,14 +73,66 @@ export class MovimentacoesComponent {
   }
 
   status(m: Movimentacao): string {
-    if (!m.saida) return 'Entrada registrada';
+    if (!m.saida) return m.conferida ? 'Conferida no coletor' : 'Entrada registrada';
     return m.liberada ? 'Liberada' : m.autorizada ? 'Autorizada' : 'Aguardando liberação';
   }
 
-  onNova(payload: Partial<Movimentacao>) {
-    this.api.salvarMovimentacao(payload).subscribe(() => {
-      this.showForm.set(false);
-      this.refresh();
+  /** Diferença entre o que a nota declarou e o que o operador contou. */
+  divergencia(m: Movimentacao): number | null {
+    if (m.quantidadeConferida === null || m.quantidadeConferida === undefined) return null;
+    const diff = m.quantidadeConferida - m.quantidade;
+    return diff === 0 ? null : diff;
+  }
+
+  endereco(m: Movimentacao): string {
+    if (!m.posicaoId) return '—';
+    const pos = this.posicoes().find((p) => p.id === m.posicaoId);
+    if (!pos) return '—';
+    const rua = this.ruas().find((r) => r.id === pos.ruaId);
+    return `${rua?.codigo ?? '?'} · ${pos.numero}`;
+  }
+
+  // ------------------------------------------------------------------ CRUD
+
+  nova() {
+    this.erro.set('');
+    this.editando.set(null);
+  }
+
+  editar(m: Movimentacao) {
+    this.erro.set('');
+    this.editando.set(m);
+  }
+
+  onSubmit(payload: Partial<Movimentacao>) {
+    const atual = this.editando();
+    const req = atual
+      ? this.api.atualizarMovimentacao(atual.id, payload)
+      : this.api.salvarMovimentacao(payload);
+
+    req.subscribe({
+      next: () => {
+        this.editando.set(undefined);
+        this.refresh();
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível salvar a movimentação.'),
+    });
+  }
+
+  confirmarExclusao(m: Movimentacao) {
+    this.erro.set('');
+    this.excluindo.set(m);
+  }
+
+  excluir() {
+    const m = this.excluindo();
+    if (!m) return;
+    this.api.deletarMovimentacao(m.id).subscribe({
+      next: () => {
+        this.excluindo.set(null);
+        this.refresh();
+      },
+      error: (e) => this.erro.set(e?.error?.mensagem ?? 'Não foi possível excluir a movimentação.'),
     });
   }
 

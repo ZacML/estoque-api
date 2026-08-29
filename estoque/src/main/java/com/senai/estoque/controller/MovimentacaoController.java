@@ -1,5 +1,7 @@
 package com.senai.estoque.controller;
 
+import com.senai.estoque.DTO.ConferenciaDTO;
+import com.senai.estoque.DTO.EnderecamentoDTO;
 import com.senai.estoque.DTO.MovimentacaoDTO;
 import com.senai.estoque.Service.MovimentacaoService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -58,5 +60,29 @@ public class MovimentacaoController {
     @PutMapping("/{id}/autorizar")
     public MovimentacaoDTO autorizarSaida(@PathVariable Long id) {
         return movimentacaoService.autorizarSaida(id);
+    }
+
+    @Operation(summary = "Movimentações de uma doca", description = "Lista a carga vinculada a uma doca (usado pelo app coletor)")
+    @GetMapping("/doca/{docaId}")
+    public List<MovimentacaoDTO> listarPorDoca(@PathVariable Long docaId) {
+        return movimentacaoService.getByDoca(docaId);
+    }
+
+    @Operation(summary = "Conferir item", description = "Grava a quantidade contada fisicamente pelo operador")
+    @PutMapping("/{id}/conferir")
+    public MovimentacaoDTO conferirItem(@PathVariable Long id, @RequestBody ConferenciaDTO dto) {
+        return movimentacaoService.conferirItem(id, dto.quantidadeConferida());
+    }
+
+    @Operation(summary = "Validar nota e liberar doca", description = "Finaliza a conferência da nota e devolve a doca para 'Livre'")
+    @PutMapping("/{id}/validar-liberar-doca")
+    public MovimentacaoDTO validarLiberarDoca(@PathVariable Long id) {
+        return movimentacaoService.validarLiberarDoca(id);
+    }
+
+    @Operation(summary = "Endereçar palete", description = "Vincula o palete à posição escolhida e ocupa o endereço no mapa")
+    @PostMapping("/{id}/enderecar")
+    public MovimentacaoDTO enderecar(@PathVariable Long id, @RequestBody EnderecamentoDTO dto) {
+        return movimentacaoService.enderecar(id, dto.posicaoId(), dto.quantidade());
     }
 }

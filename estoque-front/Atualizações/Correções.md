@@ -14,3 +14,7 @@
 
 - Ajustar movimentação: Adicionar opção de excluir e editar, ajuste no banco, back-end e front-End
 
+---
+
+Status de cada item, arquivo por arquivo: [../../docs/05-atualizacoes-aplicadas.md](../../docs/05-atualizacoes-aplicadas.md)
+

@@ -86,6 +86,29 @@
   }
 }
 
+.tema-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  app-icon {
+    font-size: 1.15rem;
+  }
+
+  &:hover {
+    background: var(--bg);
+    color: var(--text);
+  }
+}
+
 .user {
   display: flex;
   align-items: center;
@@ -152,6 +175,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex: none;
+  }
+
+  .tema-toggle {
+    width: auto;
+
+    span {
+      display: none;
+    }
   }
 
   .user {

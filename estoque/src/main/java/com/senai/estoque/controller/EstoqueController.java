@@ -53,4 +53,10 @@ public class EstoqueController {
     public List<EstoqueDTO> listarPorProduto(@PathVariable Long produtoId) {
         return estoqueService.getByProduto(produtoId);
     }
+
+    @Operation(summary = "Buscar por posição", description = "Lista itens de estoque guardados em uma posição")
+    @GetMapping("/posicao/{posicaoId}")
+    public List<EstoqueDTO> listarPorPosicao(@PathVariable Long posicaoId) {
+        return estoqueService.getByPosicao(posicaoId);
+    }
 }

@@ -1,8 +1,10 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { forkJoin } from 'rxjs';
 import { ApiService } from '../../core/api.service';
 import { Estoque, Posicao, Produto, Rua } from '../../core/models';
 import { occupancyTier } from '../../core/occupancy';
+import { RealtimeService } from '../../core/realtime.service';
 import { IconComponent } from '../../shared/icon.component';
 import { ModalComponent } from '../../shared/modal.component';
 
@@ -17,6 +19,7 @@ type Filtro = 'todas' | 'livres' | 'ocupadas';
 })
 export class RuasComponent {
   private api = inject(ApiService);
+  private realtime = inject(RealtimeService);
 
   ruas = signal<Rua[]>([]);
   posicoes = signal<Posicao[]>([]);
@@ -65,6 +68,10 @@ export class RuasComponent {
 
   constructor() {
     this.refresh();
+    // O mapa do galpão precisa acompanhar o endereçamento feito no coletor.
+    this.realtime.eventos$.pipe(takeUntilDestroyed()).subscribe(({ nome }) => {
+      if (nome !== 'conectado') this.refresh();
+    });
   }
 
   refresh() {
