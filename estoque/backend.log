@@ -1,0 +1,4774 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.senai:estoque >--------------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.1.1:run (default-cli) > test-compile @ estoque >>>
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ estoque ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ estoque ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ estoque ---
+[INFO] skip non existing resourceDirectory C:\Users\Jouli\OneDrive\�rea de Trabalho\estoque-api\estoque\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ estoque ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug parameters release 25] to target\test-classes
+[INFO] 
+[INFO] <<< spring-boot:4.1.1:run (default-cli) < test-compile @ estoque <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.1.1:run (default-cli) @ estoque ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-08-29T03:26:03.628-03:00  INFO 22784 --- [estoque] [  restartedMain] com.senai.estoque.EstoqueApplication     : Starting EstoqueApplication using Java 25.0.2 with PID 22784 (C:\Users\Jouli\OneDrive\Área de Trabalho\estoque-api\estoque\target\classes started by Jouli in C:\Users\Jouli\OneDrive\Área de Trabalho\estoque-api\estoque)
+2026-08-29T03:26:03.631-03:00  INFO 22784 --- [estoque] [  restartedMain] com.senai.estoque.EstoqueApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-08-29T03:26:03.702-03:00  INFO 22784 --- [estoque] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-08-29T03:26:03.703-03:00  INFO 22784 --- [estoque] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-08-29T03:26:04.646-03:00  INFO 22784 --- [estoque] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-29T03:26:04.723-03:00  INFO 22784 --- [estoque] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 6 JPA repository interfaces.
+2026-08-29T03:26:05.338-03:00  INFO 22784 --- [estoque] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-08-29T03:26:05.358-03:00  INFO 22784 --- [estoque] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-29T03:26:05.359-03:00  INFO 22784 --- [estoque] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-08-29T03:26:05.412-03:00  INFO 22784 --- [estoque] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1709 ms
+2026-08-29T03:26:05.635-03:00  INFO 22784 --- [estoque] [  restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-29T03:26:05.716-03:00  INFO 22784 --- [estoque] [  restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-08-29T03:26:06.188-03:00  INFO 22784 --- [estoque] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-29T03:26:06.230-03:00  INFO 22784 --- [estoque] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-29T03:26:06.443-03:00  INFO 22784 --- [estoque] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@36d77c50
+2026-08-29T03:26:06.445-03:00  INFO 22784 --- [estoque] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-29T03:26:06.538-03:00  INFO 22784 --- [estoque] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ControleEstoque]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ControleEstoque/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-29T03:26:07.713-03:00  INFO 22784 --- [estoque] [  restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    create table doca (
+        id bigint generated by default as identity,
+        expedicao boolean not null,
+        numero integer not null,
+        ocupada boolean not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table estoque (
+        id bigint generated by default as identity,
+        quantidade numeric(10,2) not null,
+        id_posicao bigint not null,
+        id_produto bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table movimentacao (
+        id bigint generated by default as identity,
+        autorizada boolean not null,
+        data_hora timestamp(6) not null,
+        liberada boolean not null,
+        motorista varchar(80),
+        nota varchar(20),
+        placa varchar(10),
+        quantidade numeric(10,2) not null,
+        saida boolean not null,
+        transportadora varchar(80),
+        id_doca bigint,
+        id_posicao bigint,
+        id_produto bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table posicao (
+        id bigint generated by default as identity,
+        numero integer not null,
+        ocupada boolean not null,
+        id_rua bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table produto (
+        id bigint generated by default as identity,
+        nome varchar(80) not null,
+        unidade varchar(10) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table rua (
+        id bigint generated by default as identity,
+        categoria varchar(40) not null,
+        codigo varchar(10) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists estoque 
+       add constraint FK6lbhaakqepi4h7q76ss8bo9bi 
+       foreign key (id_posicao) 
+       references posicao
+Hibernate: 
+    alter table if exists estoque 
+       add constraint FKbx8yr35bvoe5dqdd2sxjjjktj 
+       foreign key (id_produto) 
+       references produto
+Hibernate: 
+    alter table if exists movimentacao 
+       add constraint FKrkb3s132cct5chqxloud4r6p6 
+       foreign key (id_doca) 
+       references doca
+Hibernate: 
+    alter table if exists movimentacao 
+       add constraint FKtgmggyrvy8twhp4jxt3q55n9f 
+       foreign key (id_posicao) 
+       references posicao
+Hibernate: 
+    alter table if exists movimentacao 
+       add constraint FKlktvhoh96h5gxv4l4e3f7v0c8 
+       foreign key (id_produto) 
+       references produto
+Hibernate: 
+    alter table if exists posicao 
+       add constraint FKfaiq9x8lg3jf1gy3xw7km6evp 
+       foreign key (id_rua) 
+       references rua
+2026-08-29T03:26:07.828-03:00  INFO 22784 --- [estoque] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-29T03:26:07.938-03:00  INFO 22784 --- [estoque] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-29T03:26:08.274-03:00  WARN 22784 --- [estoque] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-29T03:26:08.754-03:00  INFO 22784 --- [estoque] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-08-29T03:26:08.760-03:00  INFO 22784 --- [estoque] [  restartedMain] com.senai.estoque.EstoqueApplication     : Started EstoqueApplication in 5.62 seconds (process running for 6.174)
+2026-08-29T03:26:08.763-03:00  WARN 22784 --- [estoque] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-29T03:26:08.763-03:00  WARN 22784 --- [estoque] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-29T03:26:23.951-03:00  INFO 22784 --- [estoque] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-29T03:26:23.952-03:00  INFO 22784 --- [estoque] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-08-29T03:26:23.953-03:00  INFO 22784 --- [estoque] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+2026-08-29T03:27:06.051-03:00  WARN 22784 --- [estoque] [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Invalid UTF-8 middle byte 0x22]
+2026-08-29T03:27:06.126-03:00  WARN 22784 --- [estoque] [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Invalid UTF-8 middle byte 0x22]
+Hibernate: 
+    select
+        count(*) 
+    from
+        rua r1_0
+Hibernate: 
+    insert 
+    into
+        rua
+        (categoria, codigo) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        count(*) 
+    from
+        rua r1_0
+Hibernate: 
+    insert 
+    into
+        rua
+        (categoria, codigo) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        count(*) 
+    from
+        rua r1_0
+Hibernate: 
+    insert 
+    into
+        rua
+        (categoria, codigo) 
+    values
+        (?, ?)
+2026-08-29T03:27:06.642-03:00  WARN 22784 --- [estoque] [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Invalid UTF-8 middle byte 0xe3]
+Hibernate: 
+    insert 
+    into
+        doca
+        (expedicao, numero, ocupada) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        doca
+        (expedicao, numero, ocupada) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        doca
+        (expedicao, numero, ocupada) 
+    values
+        (?, ?, ?)
+2026-08-29T03:27:06.869-03:00 ERROR 22784 --- [estoque] [nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: jakarta.validation.ConstraintViolationException: Validation failed for classes [com.senai.estoque.database.model.Doca] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='não deve ser nulo', propertyPath=expedicao, rootBeanClass=class com.senai.estoque.database.model.Doca, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+]] with root cause
+
+jakarta.validation.ConstraintViolationException: Validation failed for classes [com.senai.estoque.database.model.Doca] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='não deve ser nulo', propertyPath=expedicao, rootBeanClass=class com.senai.estoque.database.model.Doca, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:137) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:76) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:287) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:75) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:667) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:270) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:384) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:298) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:228) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:144) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:144) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:91) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:75) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:51) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:709) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:692) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360) ~[spring-orm-7.0.9.jar:7.0.9]
+	at jdk.proxy4/jdk.proxy4.$Proxy132.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityHandlerInvocationHandler.invokeMethod(SharedEntityManagerCreator.java:239) ~[spring-orm-7.0.9.jar:7.0.9]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:392) ~[spring-orm-7.0.9.jar:7.0.9]
+	at jdk.proxy4/jdk.proxy4.$Proxy132.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:664) ~[spring-data-jpa-4.1.1.jar:4.1.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:278) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:545) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:290) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:690) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:171) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166) ~[spring-data-jpa-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222) ~[spring-aop-7.0.9.jar:7.0.9]
+	at jdk.proxy4/jdk.proxy4.$Proxy142.save(Unknown Source) ~[na:na]
+	at com.senai.estoque.Service.DocaService.salvar(DocaService.java:36) ~[classes/:na]
+	at com.senai.estoque.controller.DocaController.salvar(DocaController.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.24.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.24.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59) ~[tomcat-embed-websocket-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0 
+    where
+        m1_0.saida=true 
+        and m1_0.autorizada=false
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        rua r1_0
+Hibernate: 
+    insert 
+    into
+        rua
+        (categoria, codigo) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        count(*) 
+    from
+        rua r1_0
+Hibernate: 
+    insert 
+    into
+        rua
+        (categoria, codigo) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        count(*) 
+    from
+        rua r1_0
+Hibernate: 
+    insert 
+    into
+        rua
+        (categoria, codigo) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        doca
+        (expedicao, numero, ocupada) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        posicao
+        (numero, ocupada, id_rua) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    insert 
+    into
+        produto
+        (nome, unidade) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    insert 
+    into
+        movimentacao
+        (autorizada, data_hora, id_doca, liberada, motorista, nota, placa, id_posicao, id_produto, quantidade, saida, transportadora) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    insert 
+    into
+        movimentacao
+        (autorizada, data_hora, id_doca, liberada, motorista, nota, placa, id_posicao, id_produto, quantidade, saida, transportadora) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    update
+        doca 
+    set
+        expedicao=?,
+        numero=?,
+        ocupada=? 
+    where
+        id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.id_posicao,
+        e1_0.id_produto,
+        e1_0.quantidade 
+    from
+        estoque e1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.id_posicao,
+        e1_0.id_produto,
+        e1_0.quantidade 
+    from
+        estoque e1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0 
+    where
+        m1_0.saida=true 
+        and m1_0.autorizada=false
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.id_posicao,
+        e1_0.id_produto,
+        e1_0.quantidade 
+    from
+        estoque e1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0 
+    where
+        m1_0.saida=true 
+        and m1_0.autorizada=false
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.id_posicao,
+        e1_0.id_produto,
+        e1_0.quantidade 
+    from
+        estoque e1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.id_posicao,
+        e1_0.id_produto,
+        e1_0.quantidade 
+    from
+        estoque e1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.id_posicao,
+        e1_0.id_produto,
+        e1_0.quantidade 
+    from
+        estoque e1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0 
+    where
+        m1_0.saida=true 
+        and m1_0.autorizada=false
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0 
+    where
+        m1_0.saida=true 
+        and m1_0.autorizada=false
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.autorizada,
+        m1_0.data_hora,
+        m1_0.id_doca,
+        m1_0.liberada,
+        m1_0.motorista,
+        m1_0.nota,
+        m1_0.placa,
+        m1_0.id_posicao,
+        m1_0.id_produto,
+        m1_0.quantidade,
+        m1_0.saida,
+        m1_0.transportadora 
+    from
+        movimentacao m1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua 
+    from
+        posicao p1_0
+Hibernate: 
+    select
+        d1_0.id,
+        d1_0.expedicao,
+        d1_0.numero,
+        d1_0.ocupada 
+    from
+        doca d1_0 
+    where
+        d1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.numero,
+        p1_0.ocupada,
+        p1_0.id_rua,
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        posicao p1_0 
+    join
+        rua r1_0 
+            on r1_0.id=p1_0.id_rua 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.nome,
+        p1_0.unidade 
+    from
+        produto p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.categoria,
+        r1_0.codigo 
+    from
+        rua r1_0 
+    where
+        r1_0.id=?

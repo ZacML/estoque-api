@@ -1,0 +1,150 @@
+<header class="page-header">
+  <div class="search-input">
+    <app-icon name="search" />
+    <input
+      type="text"
+      placeholder="Buscar produto, rua ou nota..."
+      [value]="searchTerm()"
+      (input)="searchTerm.set($any($event.target).value)"
+      aria-label="Buscar produto, rua ou nota"
+    />
+  </div>
+  <button class="btn btn-icon" type="button" aria-label="Notificações">
+    <app-icon name="bell" />
+  </button>
+  <button class="btn btn-primary" type="button" (click)="showForm.set(true)">
+    <app-icon name="plus" /> Nova movimentação
+  </button>
+</header>
+
+<section class="page-body">
+  <div>
+    <h1 class="page-title">{{ greeting() }} 👋</h1>
+    <p class="page-subtitle">
+      Você tem <strong>{{ pendentes().length }}</strong> saída(s) esperando sua liberação.
+    </p>
+  </div>
+
+  <div class="grid-auto">
+    <div class="card kpi">
+      <div class="kpi-top">
+        <span class="kpi-icon icon-green"><app-icon name="grid" /></span>
+        <span class="pill pill-green">{{ ocupacaoPct() }}%</span>
+      </div>
+      <div class="kpi-value">{{ ocupacaoPct() }}%</div>
+      <div class="kpi-label">Ocupação do armazém</div>
+      <div class="kpi-sub">{{ posicoesOcupadas() }} de {{ totalPosicoes() }} posições cheias</div>
+    </div>
+
+    <div class="card kpi">
+      <div class="kpi-top">
+        <span class="kpi-icon icon-green"><app-icon name="check" /></span>
+      </div>
+      <div class="kpi-value">{{ posicoesLivres() }}</div>
+      <div class="kpi-label">Posições livres</div>
+      <div class="kpi-sub">em {{ ruasComVaga() }} rua(s) diferente(s)</div>
+    </div>
+
+    <div class="card kpi">
+      <div class="kpi-top">
+        <span class="kpi-icon icon-amber"><app-icon name="truck" /></span>
+        <span class="pill pill-amber">{{ docasEmUso() }} / {{ docas().length }}</span>
+      </div>
+      <div class="kpi-value">{{ docasEmUso() }}</div>
+      <div class="kpi-label">Docas em uso</div>
+      <div class="kpi-sub">{{ docasLivres() }} livre(s) agora</div>
+    </div>
+
+    <div class="card kpi">
+      <div class="kpi-top">
+        <span class="kpi-icon icon-blue"><app-icon name="check" /></span>
+      </div>
+      <div class="kpi-value">{{ pendentes().length }}</div>
+      <div class="kpi-label">Saídas p/ autorizar</div>
+      <div class="kpi-sub">aguardando você</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="section-header">
+        <h2>Ocupação por rua</h2>
+        <a routerLink="/ruas">Ver ruas →</a>
+      </div>
+      @if (ocupacaoPorRua().length === 0) {
+        <p class="empty">Nenhuma rua cadastrada.</p>
+      } @else {
+        <div class="bar-chart">
+          @for (item of ocupacaoPorRua(); track item.rua.id) {
+            <div class="bar-col">
+              <span class="bar-value">{{ item.pct }}%</span>
+              <div class="bar" [class]="'tier-' + item.tier" [style.height.%]="item.pct === 0 ? 2 : item.pct"></div>
+              <span class="bar-label">{{ item.rua.codigo }}</span>
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="card">
+      <div class="section-header">
+        <h2>Movimentações de hoje</h2>
+      </div>
+      @if (movimentacoesHoje().length === 0) {
+        <p class="empty">Nenhuma movimentação hoje.</p>
+      } @else {
+        <ul class="mov-list">
+          @for (m of movimentacoesHoje(); track m.id) {
+            <li>
+              <span class="mov-icon" [class.saida]="m.saida">
+                <app-icon [name]="m.saida ? 'arrow-up' : 'arrow-down'" />
+              </span>
+              <div class="mov-text">
+                <strong>{{ movimentoLabel(m) }}</strong>
+                <span>{{ movimentoSubtitulo(m) }}</span>
+              </div>
+              <time>{{ hora(m.dataHora) }}</time>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-header">
+      <h2>Saídas aguardando sua liberação</h2>
+      <span class="pill pill-blue">{{ pendentesFiltradas().length }} pendente(s)</span>
+    </div>
+    @if (pendentesFiltradas().length === 0) {
+      <p class="empty">Nenhuma saída pendente.</p>
+    } @else {
+      <div class="grid-auto">
+        @for (m of pendentesFiltradas(); track m.id) {
+          <div class="pending-card">
+            @if (m.placa) {
+              <span class="badge">{{ m.placa }}</span>
+            }
+            <div class="pending-info">
+              <strong>Doca {{ m.docaId ?? '—' }} · {{ m.quantidade }} {{ produtoMap().get(m.produtoId)?.unidade }}</strong>
+              <span>Nota {{ m.nota ?? '—' }} · {{ m.transportadora ?? 'sem transportadora' }}</span>
+            </div>
+            <button class="btn btn-primary" type="button" (click)="liberar(m)">Liberar</button>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+@if (showForm()) {
+  <app-modal title="Nova movimentação" (close)="showForm.set(false)">
+    <app-movimentacao-form
+      [produtos]="produtos()"
+      [posicoes]="posicoes()"
+      [docas]="docas()"
+      [ruas]="ruas()"
+      (submitted)="onNovaMovimentacao($event)"
+    />
+  </app-modal>
+}

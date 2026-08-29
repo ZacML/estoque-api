@@ -1,0 +1,99 @@
+<header class="page-header">
+  <div class="search-input">
+    <app-icon name="search" />
+    <input
+      type="text"
+      placeholder="Buscar por placa ou nota..."
+      [value]="searchTerm()"
+      (input)="searchTerm.set($any($event.target).value)"
+      aria-label="Buscar por placa ou nota"
+    />
+  </div>
+  <span class="pill pill-green">{{ docasLivres() }} livres</span>
+  <span class="pill pill-amber">{{ docasEmUso() }} em uso</span>
+  <button class="btn btn-primary" type="button" (click)="chegadaParaDoca.set(null)">
+    <app-icon name="plus" /> Registrar chegada
+  </button>
+</header>
+
+<section class="page-body">
+  <div>
+    <h1 class="page-title">Controle de docas</h1>
+    <p class="page-subtitle">{{ docas().length }} docas de caminhão. A saída só é liberada depois que você autoriza a nota.</p>
+  </div>
+
+  @if (cards().length === 0) {
+    <p class="empty">Nenhuma doca cadastrada.</p>
+  } @else {
+    <div class="grid-2">
+      @for (item of cards(); track item.doca.id) {
+        <div class="card doca-card" [class.ocupada]="item.doca.ocupada">
+          <div class="doca-head">
+            <span class="doca-number" [class.ocupada]="item.doca.ocupada">{{ item.doca.numero }}</span>
+            <div class="doca-info">
+              <strong>Doca {{ item.doca.numero }}</strong>
+              <span>{{ subtitulo(item.doca) }}</span>
+            </div>
+            @if (!item.doca.ocupada) {
+              <span class="pill pill-green">Livre</span>
+            } @else if (precisaAutorizar(item.movimentacao)) {
+              <span class="pill pill-blue">Aguardando liberação</span>
+            } @else {
+              <span class="pill pill-amber">Em uso</span>
+            }
+          </div>
+
+          @if (item.doca.ocupada && item.movimentacao) {
+            <div class="doca-detalhes">
+              <div class="detalhe-row"><span>Caminhão</span><span class="badge">{{ item.movimentacao.placa ?? '—' }}</span></div>
+              <div class="detalhe-row"><span>Motorista</span><strong>{{ item.movimentacao.motorista ?? '—' }}{{ item.movimentacao.transportadora ? ' · ' + item.movimentacao.transportadora : '' }}</strong></div>
+              <div class="detalhe-row"><span>Carga</span><strong>{{ cargaLabel(item.movimentacao) }}</strong></div>
+              <div class="detalhe-row"><span>Nota</span><strong>Nº {{ item.movimentacao.nota ?? '—' }}</strong></div>
+            </div>
+            <div class="doca-actions">
+              <button class="btn" type="button" (click)="notaSelecionada.set(item.movimentacao)">Ver nota</button>
+              @if (precisaAutorizar(item.movimentacao)) {
+                <button class="btn btn-primary" type="button" (click)="autorizar(item.doca, item.movimentacao)">
+                  <app-icon name="check" /> Autorizar saída
+                </button>
+              }
+            </div>
+          } @else if (item.doca.ocupada) {
+            <p class="empty">Doca ocupada.</p>
+          } @else {
+            <div class="doca-empty">
+              <app-icon name="truck" />
+              <span>Nenhum caminhão na doca</span>
+            </div>
+            <button class="btn doca-actions-full" type="button" (click)="chegadaParaDoca.set(item.doca)">Registrar chegada</button>
+          }
+        </div>
+      }
+    </div>
+  }
+</section>
+
+@if (chegadaParaDoca() !== undefined) {
+  <app-modal title="Registrar chegada" (close)="chegadaParaDoca.set(undefined)">
+    <app-movimentacao-form
+      [produtos]="produtos()"
+      [docas]="docas()"
+      [fixedDocaId]="chegadaParaDoca()?.id ?? null"
+      [fixedSaida]="false"
+      (submitted)="onRegistrarChegada($event)"
+    />
+  </app-modal>
+}
+
+@if (notaSelecionada(); as m) {
+  <app-modal title="Detalhes da nota" (close)="notaSelecionada.set(null)">
+    <div class="detalhe-modal">
+      <div class="detalhe-row"><span>Nota</span><strong>Nº {{ m.nota ?? '—' }}</strong></div>
+      <div class="detalhe-row"><span>Caminhão</span><span class="badge">{{ m.placa ?? '—' }}</span></div>
+      <div class="detalhe-row"><span>Motorista</span><strong>{{ m.motorista ?? '—' }}</strong></div>
+      <div class="detalhe-row"><span>Transportadora</span><strong>{{ m.transportadora ?? '—' }}</strong></div>
+      <div class="detalhe-row"><span>Carga</span><strong>{{ cargaLabel(m) }}</strong></div>
+      <div class="detalhe-row"><span>Autorizada</span><strong>{{ m.autorizada ? 'Sim' : 'Não' }}</strong></div>
+    </div>
+  </app-modal>
+}

@@ -1,0 +1,88 @@
+<header class="page-header">
+  <div class="search-input">
+    <app-icon name="search" />
+    <input
+      type="text"
+      placeholder="Buscar rua ou posição..."
+      [value]="searchTerm()"
+      (input)="searchTerm.set($any($event.target).value)"
+      aria-label="Buscar rua ou posição"
+    />
+  </div>
+  <span class="pill pill-amber">{{ totalOcupadas() }} ocupadas</span>
+  <span class="pill pill-green">{{ totalLivres() }} livres</span>
+  <button class="btn" type="button" (click)="cicleFiltro()">
+    <app-icon name="filter" />
+    Filtrar: {{ filtro() === 'todas' ? 'Todas' : filtro() === 'livres' ? 'Livres' : 'Ocupadas' }}
+  </button>
+</header>
+
+<section class="page-body">
+  <div>
+    <h1 class="page-title">Controle das ruas</h1>
+    <p class="page-subtitle">{{ ruas().length }} ruas cadastradas. Toque numa posição para ver o produto guardado.</p>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="swatch livre"></span> Livre</span>
+    <span class="legend-item"><span class="swatch ocupada"></span> Ocupada</span>
+    <span class="legend-updated">Atualizado às {{ horaAtualizacao() }}</span>
+  </div>
+
+  @if (cards().length === 0) {
+    <p class="empty">Nenhuma rua cadastrada.</p>
+  } @else {
+    <div class="grid-2">
+      @for (item of cards(); track item.rua.id) {
+        <div class="card rua-card">
+          <div class="rua-head">
+            <span class="rua-code">{{ item.rua.codigo }}</span>
+            <div class="rua-info">
+              <strong>Rua {{ item.rua.codigo.replace('R', '') }}</strong>
+              <span>{{ item.rua.categoria }} · {{ item.ocupadas }} de {{ item.total }} ocupadas</span>
+            </div>
+            <span class="pill" [class.pill-amber]="item.tier !== 'green'" [class.pill-green]="item.tier === 'green'">
+              {{ item.pct }}%
+            </span>
+          </div>
+          <div class="posicoes-grid">
+            @for (pos of item.posicoes; track pos.id) {
+              <button
+                type="button"
+                class="posicao-cell"
+                [class.ocupada]="pos.ocupada"
+                [attr.aria-label]="'Posição ' + pos.numero + ', ' + (pos.ocupada ? 'ocupada' : 'livre')"
+                (click)="selecionada.set(pos)"
+              >
+                {{ pos.numero }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+</section>
+
+@if (selecionada(); as pos) {
+  <app-modal title="Detalhes da posição" (close)="selecionada.set(null)">
+    <div class="detalhe">
+      <div class="detalhe-row">
+        <span>Status</span>
+        <strong>{{ pos.ocupada ? 'Ocupada' : 'Livre' }}</strong>
+      </div>
+      @if (estoqueDaPosicao(); as info) {
+        <div class="detalhe-row">
+          <span>Produto</span>
+          <strong>{{ info.produto?.nome ?? '—' }}</strong>
+        </div>
+        <div class="detalhe-row">
+          <span>Quantidade</span>
+          <strong>{{ info.estoque.quantidade }} {{ info.produto?.unidade }}</strong>
+        </div>
+      } @else if (pos.ocupada) {
+        <p class="empty">Sem registro de estoque para esta posição.</p>
+      }
+    </div>
+  </app-modal>
+}

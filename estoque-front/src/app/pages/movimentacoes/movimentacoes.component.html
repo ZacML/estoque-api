@@ -1,0 +1,77 @@
+<header class="page-header">
+  <div class="search-input">
+    <app-icon name="search" />
+    <input
+      type="text"
+      placeholder="Buscar por produto, placa ou nota..."
+      [value]="searchTerm()"
+      (input)="searchTerm.set($any($event.target).value)"
+      aria-label="Buscar por produto, placa ou nota"
+    />
+  </div>
+  <button class="btn btn-primary" type="button" (click)="showForm.set(true)">
+    <app-icon name="plus" /> Nova movimentação
+  </button>
+</header>
+
+<section class="page-body">
+  <div>
+    <h1 class="page-title">Movimentações</h1>
+    <p class="page-subtitle">{{ movimentacoes().length }} movimentações registradas.</p>
+  </div>
+
+  <div class="card">
+    @if (lista().length === 0) {
+      <p class="empty">Nenhuma movimentação registrada.</p>
+    } @else {
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Data/hora</th>
+              <th>Tipo</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Placa / Nota</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (m of lista(); track m.id) {
+              <tr>
+                <td>{{ dataHoraFmt(m.dataHora) }}</td>
+                <td>
+                  <span class="pill" [class.pill-blue]="!m.saida" [class.pill-green]="m.saida">
+                    {{ m.saida ? 'Saída' : 'Entrada' }}
+                  </span>
+                </td>
+                <td>{{ produtoMap().get(m.produtoId)?.nome ?? '—' }}</td>
+                <td>{{ m.quantidade }} {{ produtoMap().get(m.produtoId)?.unidade }}</td>
+                <td>{{ m.placa ?? '—' }} / {{ m.nota ?? '—' }}</td>
+                <td>{{ status(m) }}</td>
+                <td>
+                  @if (m.saida && !m.autorizada) {
+                    <button class="btn btn-primary" type="button" (click)="liberar(m)">Liberar</button>
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</section>
+
+@if (showForm()) {
+  <app-modal title="Nova movimentação" (close)="showForm.set(false)">
+    <app-movimentacao-form
+      [produtos]="produtos()"
+      [posicoes]="posicoes()"
+      [docas]="docas()"
+      [ruas]="ruas()"
+      (submitted)="onNova($event)"
+    />
+  </app-modal>
+}

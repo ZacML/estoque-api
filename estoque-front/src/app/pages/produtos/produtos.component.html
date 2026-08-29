@@ -1,0 +1,68 @@
+<header class="page-header">
+  <div class="search-input">
+    <app-icon name="search" />
+    <input
+      type="text"
+      placeholder="Buscar produto..."
+      [value]="searchTerm()"
+      (input)="searchTerm.set($any($event.target).value)"
+      aria-label="Buscar produto"
+    />
+  </div>
+  <button class="btn btn-primary" type="button" (click)="novo()">
+    <app-icon name="plus" /> Novo produto
+  </button>
+</header>
+
+<section class="page-body">
+  <div>
+    <h1 class="page-title">Produtos</h1>
+    <p class="page-subtitle">{{ produtos().length }} produtos cadastrados.</p>
+  </div>
+
+  <div class="card">
+    @if (produtosFiltrados().length === 0) {
+      <p class="empty">Nenhum produto cadastrado.</p>
+    } @else {
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome do produto</th>
+              <th>Unidade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (p of produtosFiltrados(); track p.id) {
+              <tr>
+                <td>{{ p.nome }}</td>
+                <td>{{ p.unidade }}</td>
+                <td class="acoes">
+                  <button class="btn" type="button" (click)="editar(p)">Editar</button>
+                  <button class="btn" type="button" (click)="excluir(p)">Excluir</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</section>
+
+@if (editando() !== undefined) {
+  <app-modal [title]="editando() ? 'Editar produto' : 'Novo produto'" (close)="editando.set(undefined)">
+    <form class="form" (ngSubmit)="salvar()">
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" [(ngModel)]="nome" required />
+      </div>
+      <div class="field">
+        <label for="unidade">Unidade</label>
+        <input id="unidade" name="unidade" type="text" placeholder="ex.: un, cx, kg" [(ngModel)]="unidade" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </app-modal>
+}
